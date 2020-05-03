@@ -1,0 +1,15 @@
+misc_packages: "kernel-devel,git,screen,tigervnc-server.x86_64,virt-install"
+
+vbox_release: 5.2
+vbox_version: "{{ vbox_release }}.40"
+vbox_version_long: "{{ vbox_version }}_137108_el7-1"
+vbox_url: "http://download.virtualbox.org/virtualbox/{{ vbox_version }}/VirtualBox-{{ vbox_release }}-{{ vbox_version_long }}.x86_64.rpm"
+
+vagrant_release: 2.2
+vagrant_version: "{{ vagrant_release }}.7"
+vagrant_url: "https://releases.hashicorp.com/vagrant/{{ vagrant_version }}/vagrant_{{ vagrant_version }}_x86_64.rpm"
+
+packer_version: 1.5.6
+packer_file: "packer_{{ packer_version }}_linux_amd64.zip"
+packer_url: "https://releases.hashicorp.com/packer/{{ packer_version }}/{{ packer_file }}"
+packer_path: "/home/{{ ansible_ssh_user }}"

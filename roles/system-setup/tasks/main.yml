@@ -1,0 +1,45 @@
+---
+- name: yum install Base group
+  yum:
+    name: "@Base"
+    state: present
+
+- name: yum install Core group
+  yum:
+    name: "@Core"
+    state: present
+
+- name: yum install Platform Development group
+  yum:
+    name: "@Platform Development"
+    state: present
+
+- name: yum install Additional Development group
+  yum:
+    name: "@Additional Development"
+    state: present
+
+- name: yum install Virtualization Hypervisor group
+  yum:
+    name: "@Virtualization Hypervisor"
+    state: present
+
+- name: yum install Server with GUI environment
+  yum:
+    name: "@^Server with GUI"
+    state: present
+
+- name: yum install miscellaneous packages
+  yum:
+    name: "{{ misc_packages }}"
+    state: present
+
+- name: Install VirtualBox from remote repository
+  yum:
+    name: "{{ vbox_url }}"
+    state: present
+
+- name: Install Vagrant from remote repository
+  yum:
+    name: "{{ vagrant_url }}"
+    state: present

@@ -1,0 +1,25 @@
+---
+- name: Download Packer archive
+  get_url:
+    url: "{{ packer_url }}"
+    dest: "./{{ packer_file }}"
+
+- name: Extract Packer archive
+  unarchive:
+    remote_src: true
+    src: "{{ packer_file }}"
+    dest: "."
+    creates: "packer"
+
+- name: Delete Packer archive
+  file:
+    path: "{{ packer_file }}"
+    state: absent
+
+- name: Add packer to PATH
+  lineinfile: >
+    dest="/home/{{ ansible_ssh_user }}/.bash_profile"
+    state=present
+    backrefs=yes
+    regexp='PATH=(["]*)((?!.*?{{ packer_path }}).*?)(["]*)$'
+    line="PATH={{ packer_path }}:\1\2\3"

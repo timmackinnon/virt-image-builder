@@ -1,0 +1,6 @@
+---
+- name: Set up image builder machine
+  hosts: all
+  roles:
+    - { role: system-setup, become: true }
+    - { role: packer-setup }

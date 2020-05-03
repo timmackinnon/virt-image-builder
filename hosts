@@ -1,0 +1,6 @@
+[builders]
+#builder0 ansible_host=a.b.c.d
+
+[builders:vars]
+#ansible_ssh_user=FIXME
+ansible_ssh_private_key_file=~/.ssh/id_rsa
