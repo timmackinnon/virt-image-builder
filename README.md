@@ -6,7 +6,7 @@ This code is geared towards Linux and the RedHat family of operating systems - C
 Once configured, this image builder machine can then be used to build virtualization images.
 
 # Does your machine support virtualization?
-First things first ... we need to check if your system suuports virtualizationa:
+First things first ... we need to check if your system supports virtualization:
 ```
 $ egrep "(svm|vmx)" /proc/cpuinfo
 ```
